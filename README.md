@@ -340,7 +340,7 @@ UMT Lahore · School of AI · Department of AI/DS
 | M. Faizan Haider (Lead) | S2024332017 | [@Faizanhaider013](https://github.com/Faizanhaider013) | Team Lead, AI/RAG & Backend |
 | Shehzaib Mirza | S2024332016 | [@Shehzaib17](https://github.com/Shehzaib17) | Frontend (React UI) |
 | Hassan Mujtaba | S2024332014 | [@claw751](https://github.com/claw751) | Smart Contracts (Solidity/Hardhat) |
-| Ali Zain | S2024332034 | TBD | Integration, Testing & Documentation |
+| M Ali Zain | S2024332034 | zain132ds | Integration, Testing & Documentation |
 
 ---
 
