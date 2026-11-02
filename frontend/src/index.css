@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-ivory text-graphite antialiased;
+    font-family: theme("fontFamily.sans");
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #dcdbd4 transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #dcdbd4;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    border-radius: 9999px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #c9c8c0;
+    background-clip: content-box;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-indigo/40 ring-offset-2 ring-offset-ivory;
+  }
+
+  ::selection {
+    background: #e0def7;
+    color: #252633;
+  }
+}
+
+@layer components {
+  .surface {
+    @apply rounded-2xl border border-line bg-paper shadow-subtle;
+  }
+
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-150 disabled:cursor-not-allowed disabled:opacity-45;
+  }
+  .btn-primary {
+    @apply btn bg-indigo text-white shadow-subtle hover:bg-indigo-600 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply btn border border-line bg-paper text-graphite hover:border-[#dcdbd4] hover:bg-ivory active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-muted hover:bg-black/[0.04] hover:text-graphite;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-paper px-3.5 py-2.5 text-sm text-graphite placeholder:text-muted/80 transition-all duration-150 focus:border-indigo/50 focus:shadow-ring;
+  }
+
+  .label {
+    @apply mb-1.5 block text-[13px] font-medium text-graphite;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+
+  .overline {
+    @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-muted;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-2.5 rounded-xl px-2.5 py-2 text-sm font-medium text-muted transition-colors duration-150 hover:bg-black/[0.035] hover:text-graphite;
+  }
+  .nav-item-active {
+    @apply bg-white text-graphite shadow-subtle;
+  }
+
+  .mono {
+    @apply font-mono text-[12.5px];
+  }
+
+  .hairline {
+    @apply border-line;
+  }
+
+  /* Markdown-ish prose for AI answers */
+  .answer p {
+    @apply mb-3 leading-[1.7] text-graphite last:mb-0;
+  }
+  .answer strong {
+    @apply font-semibold text-graphite;
+  }
+  .answer ul {
+    @apply mb-3 list-disc space-y-1 pl-5 text-graphite;
+  }
+  .answer code {
+    @apply rounded-md bg-ivory px-1.5 py-0.5 font-mono text-[12.5px] text-indigo;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+    animation: shimmer 1.4s infinite;
+  }
+}
